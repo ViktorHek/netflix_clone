@@ -14,4 +14,14 @@ export const Inner = styled.div`
   }
 `;
 
+export const Pane = styled.div`
+  width: 50%;
+`;
+
+export const Title = styled.h1``;
+
+export const SubTitle = styled.h2``;
+
+export const Image = styled.img``;
+
 export const Container = styled.div``;
