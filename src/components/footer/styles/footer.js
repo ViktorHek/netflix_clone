@@ -47,7 +47,7 @@ export const Text = styled.p`
   margin-bottom: 40px;
 `;
 
-export const Title = styled.p`
+export const Break = styled.p`
   flex-basis: 100%;
   height: 0;
 `;
