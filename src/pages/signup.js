@@ -18,6 +18,26 @@ const Signup = () => {
 
   const handleSignUp = (event) => {
     event.preventDefault()
+
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((result) =>
+        result.user
+          .updateProfile({
+            displayName: firstName,
+            photoURL: Math.floor(Math.random() * 5) + 1,
+          })
+          .then(() => {
+            history.push(ROUTES.BROWSE)
+          })
+      )
+      .catch((error) => {
+        setFirstName('')
+        setEmail('')
+        setPassword('')
+        setError(error.message)
+      })
   }
   return (
     <>
@@ -44,11 +64,11 @@ const Signup = () => {
               onChange={({ target }) => setPassword(target.value)}
             />
             <Form.Submit disabled={isInvalid} type="submit">
-              Sing Up
+              Sign Up
             </Form.Submit>
             <Form.Text>
               Do you have an Account?{' '}
-              <Form.Link to="/signip">Click Here</Form.Link>
+              <Form.Link to="/signin">Click Here</Form.Link>
             </Form.Text>
             <Form.TextSmall>
               This page is protected by Google. come at me braw!
