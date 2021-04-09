@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { useHistory } from 'react-router-dom' 
+import { useHistory } from 'react-router-dom'
 import { FirebaseContext } from '../context/firebase'
 import { FooterContainer } from '../containers/footer'
 import HeaderContainer from '../containers/header'
@@ -13,11 +13,11 @@ const Signin = () => {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  const isInvalid = password == '' || email == ''
+  const isInvalid = password === '' || email === ''
   const handleSignIn = (event) => {
     event.preventDefault()
 
-    firebase 
+    firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
@@ -53,14 +53,13 @@ const Signin = () => {
             <Form.Submit disabled={isInvalid} type="submit">
               Sing In
             </Form.Submit>
+            <Form.Text>
+              New to Netflix? <Form.Link to="/signup">Sign Up Now</Form.Link>
+            </Form.Text>
+            <Form.TextSmall>
+              This page is protected by Google. come at me braw!
+            </Form.TextSmall>
           </Form.Base>
-
-          <Form.Text>
-            New to Netflix? <Form.Link to="/signup">Sign Up Now</Form.Link>
-          </Form.Text>
-          <Form.TextSmall>
-            This page is protected by Google. come at me braw!
-          </Form.TextSmall>
         </Form>
       </HeaderContainer>
       <FooterContainer />
