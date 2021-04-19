@@ -1,14 +1,19 @@
 import React from 'react'
-import {useContent} from '../hooks'
+import { BrowseContainer } from '../containers/browse'
+import { useContent } from '../hooks'
+import selectionMap from '../utils/selection-map'
 
 const Browse = () => {
-
-  const {series } = useContent('series')
-  console.log(series)
+  const { series } = useContent('series')
+  const { films } = useContent('films')
+  // console.log(series)
+  // console.log(films)
+  const slides = selectionMap({ series, films })
+  // console.log(slides)
 
   return (
     <>
-      <p>Browse</p>
+      <BrowseContainer slides={slides} />
     </>
   )
 }
