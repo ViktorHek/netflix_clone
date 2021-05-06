@@ -110,7 +110,7 @@ export const Search = styled.div`
   @media (max-width: 700px) {
     display: none;
   }
-`;
+`
 
 export const SearchIcon = styled.button`
   cursor: pointer;
@@ -121,7 +121,7 @@ export const SearchIcon = styled.button`
     filter: brightness(0) invert(1);
     width: 16px;
   }
-`;
+`
 
 export const SearchInput = styled.input`
   background-color: #44444459;
@@ -130,8 +130,11 @@ export const SearchInput = styled.input`
   transition: width 0.5s;
   height: 30px;
   font-size: 14px;
-  margin-left: ${({active}) => (active === true ? '10px' : '0')};
-`;
+  margin-left: ${({ active }) => (active === true ? '10px' : '0')};
+  padding: ${({ active }) => (active === true ? '0 10px' : '0')};
+  opacity: ${({ active }) => (active === true ? '1' : '0')};
+  width: ${({ active }) => (active === true ? '200px' : '0px')};
+`
 
 export const Profile = styled.div`
   display: flex;
@@ -205,4 +208,23 @@ export const FeatureCallOut = styled.p`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
   margin: 0;
   margin-bottom: 20px;
+`
+
+export const PlayButton = styled.button`
+  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
+  background-color: #e6e6e6;
+  color: #000;
+  font-weight: bold;
+  border-width: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  max-width: 130px;
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ff1e1e;
+    color: white;
+  }
 `

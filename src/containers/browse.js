@@ -30,7 +30,7 @@ export function BrowseContainer({ slides }) {
             <Header.TextLink>Films</Header.TextLink>
           </Header.Group>
           <Header.Group>
-            <Header.Search 
+            <Header.Search
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
@@ -42,7 +42,9 @@ export function BrowseContainer({ slides }) {
                   <Header.TextLink>{user.displayName}</Header.TextLink>
                 </Header.Group>
                 <Header.Group>
-                  <Header.TextLink onClick={() => firebase.auth().signOut()} >Sign Out</Header.TextLink>
+                  <Header.TextLink onClick={() => firebase.auth().signOut()}>
+                    Sign Out
+                  </Header.TextLink>
                 </Header.Group>
               </Header.Dropdown>
             </Header.Profile>
@@ -57,6 +59,7 @@ export function BrowseContainer({ slides }) {
             place among the greats. Watch out SpaceGhostPurrp, there is a new
             king on the way.
           </Header.Text>
+          <Header.PlayButton>Play</Header.PlayButton>
         </Header.Feature>
       </Header>
     </>
